@@ -1,10 +1,13 @@
 import pandas as pd
 import streamlit as st
 
+import altair as alt
+
 st.title('Datos de las 100 canciones más escuchadas en Spotif')
 
 URL = 'top_100_streamed_songs.csv'
-df = pd.read_csv(URL)
+dfOriginal = pd.read_csv(URL)
+df = dfOriginal
 
 # Checkbox para ver la tabal entera
 entera = st.checkbox('Mostrar tabla entera') 
@@ -36,3 +39,16 @@ if entera == False:
 
 # Mostramos los datos
 st.write(df)
+
+dfGraf = dfOriginal
+
+st.title(" Este es un grafico que relaciona  la bailabilidad con la energía de las canciones")
+chart = alt.Chart(df).mark_circle().encode(
+    x='danceability',
+    y='energy',
+    tooltip=['name', 'duration', 'loudness', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo']
+).interactive()
+
+
+
+st.write(chart)
