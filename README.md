@@ -23,3 +23,4 @@ La base de datos ha sido recogida de la web: https://www.kaggle.com/datasets/ama
 * acousticness: Es una medida de confianza que va de 0.0 a 1.0 sobre si la canción es acústica. 1.0 representa una alta confianza de que la canción es acústica.
 
 * instrumentalness: Predice si una canción no tiene voces. Los sonidos de "ooh" y "aah" se consideran instrumentales en este contexto. El rap o el canto sin letra no se consideran instrumentales. Los valores cercanos a 1.0 describen canciones que probablemente no tienen voces, mientras que los valores cercanos a 0.0 describen canciones que probablemente sí tienen voces.
+
